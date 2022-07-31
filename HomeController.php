@@ -62,16 +62,13 @@ class HomeController extends Controller
 	    public function send(SmppServiceInterface $smpp)
     {
         
-$server='115.112.190.37';
+$server='';
 $port='2776';
-$username='VIASMPPP';
-$password='demo@123';
-$phone='8240092715';
-$header='VIALOG';
-$message='Dear {#var#}, 
-We are delighted to have you with us !
-Your client id is {#var#}. Kindly check/update your details at {#var#}.
-For more details, visit us at {#var#} -Vialogue Media';
+$username='';
+$password='';
+$phone='';
+$header='';
+$message='fgdfg';
 
 // Construct transport and client
 $transport = new SocketTransport(array($server), $port);
@@ -118,15 +115,15 @@ $tags = array(
 
 $from->ton = 0;
 $from->npi = 0;
-//$from->templateId = '1107163454194445538';
-//$from->template_name = 'Onboarding';
-//$from->header = 'VIALOG';
+//$from->templateId = '';
+//$from->template_name = '';
+//$from->header = '';
 
 $to->ton = 0;
 $to->npi = 0;
-//$from->templateId = '1107163454194445538';
-//$from->template_name = 'Onboarding';
-//$from->header = 'VIALOG';
+//$from->templateId = '';
+//$from->template_name = '';
+//$from->header = '';
 
 //dd($from, $to, $encodedMessage, $tags);
 
