@@ -38,7 +38,7 @@ class HomeController extends Controller
 
     function connect(){
 
-            $transport = new SocketTransport(array('115.112.190.36'), '2776');
+            $transport = new SocketTransport(array(''), '2776');
             $transport->setRecvTimeout(60000);
             $transport::$forceIpv4 = true;
             $transport->setSendTimeout(60000);
@@ -54,7 +54,7 @@ class HomeController extends Controller
             $transport->open();
 
             // Bind transmitter
-            $status = $smpp->bindTransmitter('VIASMPPP', 'demo@123');
+            $status = $smpp->bindTransmitter('', '');
             //dd($status);
     }
 
@@ -108,8 +108,8 @@ $from = new SmppAddress($header, SMPP::TON_ALPHANUMERIC, SMPP::NPI_UNKNOWN);
 $to = new SmppAddress($phone, SMPP::TON_INTERNATIONAL, SMPP::NPI_E164);
 
 $tags = array(
-            new SmppTag(0x1400, '1101557290000055412'),
-            new SmppTag(0x1401, '1107163454194445538')
+            new SmppTag(0x1400, ''),
+            new SmppTag(0x1401, '')
         );
 //$message_id = $smpp->sendSMS($from, $to, $encodedMessage, $tags);
 
